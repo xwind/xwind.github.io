@@ -71,4 +71,4 @@ Licensing
 
 Contact
 -------
-I'd love to hear from you at [@dirkfabisch](xwindphoenix@gmail.com). Feel free to open issues if you run into trouble or have suggestions. Pull Requests always welcome.
+I'd love to hear from you at [@xwind](xwindphoenix@gmail.com). Feel free to open issues if you run into trouble or have suggestions. Pull Requests always welcome.
