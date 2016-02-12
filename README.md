@@ -4,11 +4,9 @@ mediator
 A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme
 [Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](http://blog.base68.com).
 
-Screenshots
---------
-![screenshot](/assets/images/screenshot1.jpg)
-![screenshot](/assets/images/screenshot2.jpg)
-![screenshot](/assets/images/screenshot3.jpg)
+Original Version
+-------
+https://github.com/dirkfabisch/mediator
 
 Features
 -------
@@ -21,8 +19,8 @@ Features
 
 Getting Started
 ---
-- [Fork this repository](https://github.com/dirkfabisch/mediator)
-- Clone it: `git clone https://github.com/YOUR-USER/mediator`
+- [Fork this repository](https://github.com/xwind/TstBlog)
+- Clone it: `git clone https://github.com/xwind/TstBlog`
 - Install the requried gems ([GitHub Pages](https://github.com/github/pages-gem), [Bourbon](https://github.com/thoughtbot/bourbon) and [Jekyll](https://github.com/jekyll/jekyll), [Jemoji](https://github.com/jekyll/jemoji)): `bundle install`
 - Run the jekyll server: `bundle exec jekyll serve`
 
@@ -65,8 +63,6 @@ The Liquid template engine will magical combine the different parts to a share u
 ```
 http://twitter.com/share?text=post_title&amp;url=post_url
 ````
-
-See [_config.yml](https://github.com/dirkfabisch/mediator/blob/master/_config.yml) for more examples.
 
 Licensing
 ---------
