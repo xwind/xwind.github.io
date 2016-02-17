@@ -3,6 +3,7 @@ layout: post
 title:  Hello World
 date:   2016-02-11 19:23:25
 categories: Others
+tags: Others
 image: /assets/article_images/2016-02-12-hello-world/title.jpg
 comments: true
 ---
