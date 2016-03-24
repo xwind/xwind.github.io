@@ -9,7 +9,7 @@ comments: true
 ---
 忙里偷闲修改一下自己的vim配置文件
 
-#加载配色
+\#加载配色
 
 1. 从[这里](https://github.com/plasticboy/vim-markdown)git到最新的markdown配色方案
 2. 将其中所有的文件复制到你的vim目录下

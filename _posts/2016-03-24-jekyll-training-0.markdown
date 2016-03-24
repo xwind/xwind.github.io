@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "jekyll的安装笔记(0)"
-date: 2016-02-17
+date: 2016-03-23
 category: code
 tags: jekyll windows ruby
 comments: true

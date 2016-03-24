@@ -17,6 +17,7 @@ name: 'xwind'
 author: 'xwind'
 author_image: "/assets/images/author.jpg"
 
+markdown: kramdown
 disqus: true
 disqusname: xwindphoenix.space
 paginate:	5
