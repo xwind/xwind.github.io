@@ -74,3 +74,30 @@ bundle exec jekyll serve
 {% endhighlight ruby %}
 
 问题到此得到解决。
+
+* 2016.12.24 更新
+在ubuntu下不能使用bundle安装部分gem,后来发现是ruby dev环境配置不正确
+错误信息如下
+
+> ERROR:  While executing gem ... (Gem::FilePermissionError)
+> 	You don't have write permissions for the /var/lib/gems/2.3.0 directory.
+> xacking@ubuntu:~/Blog/TstBlog$ sudo gem install RedCloth -v '4.2.9'
+> Building native extensions.  This could take a while...
+> ERROR:  Error installing RedCloth:
+>  	ERROR: Failed to build gem native extension.
+>
+> current directory: /var/lib/gems/2.3.0/gems/RedCloth-4.2.9/ext/redcloth_scan  
+> /usr/bin/ruby2.3 -r ./siteconf20161214-2465-1hrl24k.rb extconf.rb
+> mkmf.rb can't find header files for ruby at /usr/lib/ruby/include/ruby.h
+>
+> extconf failed, exit code 1
+>
+> Gem files will remain installed in /var/lib/gems/2.3.0/gems/RedCloth-4.2.9 for inspection.
+> Results logged to /var/lib/gems/2.3.0/extensions/x86\_64-linux/2.3.0/RedCloth-4.2.9/gem_make.out
+
+
+ubuntu下apt-get的安装包版本不是特别一致,导致我ruby环境有问题
+给出一个懒惰的方法
+{% highlight bash %}
+sudo apt-get install ruby-dev
+{% endhighlight bash %}
