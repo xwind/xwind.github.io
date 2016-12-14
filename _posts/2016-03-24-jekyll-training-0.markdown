@@ -97,7 +97,7 @@ bundle exec jekyll serve
 
 
 ubuntu下apt-get的安装包版本不是特别一致,导致我ruby环境有问题
-给出一个懒惰的方法
+给出一个懒惰的解决方案
 {% highlight bash %}
 sudo apt-get install ruby-dev
 {% endhighlight bash %}
