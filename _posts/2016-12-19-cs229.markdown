@@ -42,4 +42,22 @@ Th2:$$\nabla_{A^T}f(A) = (\nabla_{A}f(A))^T $$
 Prove2: Obviously!  
 
 Th3:$$\nabla_{A}trABA^TC = CAB + C^TAB^T$$  
-
+Prove3:
+$$
+\begin{aligned}
+A&=[A_{(i,j)}]\\
+AB_{(i,j)}&=\sum_{k=1}^na_{ik}a_{kj}\\
+ABA^T_{(i,j)}&=\sum_{k=1}^nAB_{(i,k)}A^T_{kj}\\
+			 &=\sum_{k=1}^n\sum_{l=1}^na_{il}b_{lk}a_{jk}\\
+ABA^TC_{(i,j)}&=\sum_{k=1}^nABA^T_{(i,k)}C_{kj}\\
+			  &=\sum_{k=1}^n\sum_{l=1}^n\sum_{m=1}^na_{im}b_{ml}a_{kl}c_{kj}\\
+trABA^TC&=\sum_{i=1}^n\sum_{k=1}^n\sum_{l=1}^n\sum_{m=1}^na_{im}b_{ml}a_{kl}c_{ki}\\
+\nabla_{A}trABA^TC&=[\sum_{k=1}^n\sum_{l=1}^nb_{ml}a_{kl}c_{ki}+\sum_{i=1}^n\sum_{m=1}^na_{im}b_{ml}c_{ki}]\\
+				  &\ (rename\ the\ index)\\
+				  &=[\sum_{k}^n\sum_{l}^nb_{ik}a_{lk}c_{lj}]+[\sum_{k}^n\sum_{l}^nc_{ik}a_{kl}b_{lj}]\\
+				  &=[\sum_{l}^nBA^T_{(i,l)}c_{lj}]+[\sum_{l}^nCA_{(i,l)}b_{lj}]\\
+				  &=[BA^TC_{(i,j)}]+[CAB_{(i,j)}]\\
+				  &=BA^TC+CAB\\
+				  &=CAB+C^TAB^T\\
+\end{aligned}
+$$
