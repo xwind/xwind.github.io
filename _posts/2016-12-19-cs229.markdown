@@ -1,0 +1,45 @@
+---
+layout: post
+title: "CS229 Andrew Ng Notes 001"
+date: 2016-12-19
+category: machining learning
+tags: ML
+comments: true
+---
+* Notes 1中涉及一些矩阵的推导,由于部分过程略过,在此补充
+* Notes 1 contains some knowledge about matrix,and I will prove it in detail(Eng)
+
+
+Th1:$$\nabla_{A}trAB = B^T$$\\
+Def1:$$\nabla_{A}f(A)=\left[
+						\begin{array}{ccc}
+						\frac{\partial f}{\partial A_{11}} &\cdots &\frac{\partial f}{\partial A_{1n}}\\
+						\vdots & &\vdots\\
+						\frac{\partial f}{\partial A_{m1}} &\cdots &\frac{\partial f}{\partial A_{mn}}
+						\end{array}
+					\right]$$\\
+Prove1:\\
+$$\begin{aligned}
+	\nabla_{A}trAB &= \nabla_{A}\sum_{i=1}^{n}\sum_{j=1}^{n}a_{ij}b_{ji}\\
+				   &= \left[
+					\begin{array}{ccc}
+					\frac{\partial a_{11}b_{11}}{\partial a_{11}} &\cdots &\frac{\partial a_{1n}b_{n1}}{\partial a_{1n}}\\
+					\vdots & &\vdots\\
+					\frac{\partial a_{n1}b_{n1}}{\partial a_{n1}} &\cdots &\frac{\partial a_{nn}b_{nn}}{\partial a_{nn}}
+					\end{array}
+				\right]\\
+				   &= \left[
+					\begin{array}{ccc}
+					b_{11} &\cdots &b_{n1}\\
+					\vdots & &\vdots\\
+					b_{1n} &\cdots &b_{nn}
+					\end{array}
+				\right]\\
+				  &= B^T
+\end{aligned}$$
+
+Th2:$$\nabla_{A^T}f(A) = (\nabla_{A}f(A))^T $$  
+Prove2: Obviously!  
+
+Th3:$$\nabla_{A}trABA^TC = CAB + C^TAB^T$$  
+

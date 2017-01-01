@@ -104,6 +104,26 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
           <div class="article-item">
             <header class="post-header">
+              <h2 class="post-title" itemprop="name"><a href="/machining%20learning/2016/12/19/cs229.html" itemprop="url">CS229 Andrew Ng Notes 001</a></h2>
+            </header>
+            <section class="post-excerpt" itemprop="description">
+              <p>
+  Notes 1中涉及一些矩阵的推导,由于部分过程略过,在此补充
+  Notes 1 contains some knowledge about matrix,and I will prove it in detail(Eng)
+
+
+</p>
+            </section>
+            <div class="post-meta">
+              <time datetime="19 December 2016">19 December 2016</time>
+<!--            <span class="post-tags-set">on <span class="post-tag-">, <a href="/tag/"></a></span></span>-->
+            </div>
+          </div>
+        </article>
+      
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+          <div class="article-item">
+            <header class="post-header">
               <h2 class="post-title" itemprop="name"><a href="/codes/2016/12/13/proxychain.html" itemprop="url">proxychain的使用</a></h2>
             </header>
             <section class="post-excerpt" itemprop="description">
@@ -157,10 +177,32 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
           <div class="article-item">
             <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="/code/2016/02/17/vim-training-0.html" itemprop="url">vim的调教日记(0)</a></h2>
+              <h2 class="post-title" itemprop="name"><a href="/code/2016/02/17/vim-source-install.html" itemprop="url">vim的调教日记(1)</a></h2>
             </header>
             <section class="post-excerpt" itemprop="description">
-              <p>忙里偷闲修改一下自己的vim配置文件
+              <p>Git到源代码
+
+  如果你没有git过vim
+
+
+git clone https://github.com/vim/vim.git
+
+如果你有vim的git
+
+cd vim
+git pull
+
+
+  安装vim
+
+
+cd src
+make distclean # if you build Vim before
+make
+sudo make install
+
+但是上述方式安装并不理想，由此我参考了下其他的方法
+# 站在巨人的肩膀上
 
 </p>
             </section>
@@ -171,28 +213,13 @@
           </div>
         </article>
       
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
-          <div class="article-item">
-            <header class="post-header">
-              <h2 class="post-title" itemprop="name"><a href="/others/2016/02/11/hello-world.html" itemprop="url">Hello World</a></h2>
-            </header>
-            <section class="post-excerpt" itemprop="description">
-              <p>Blog搭建成功，迈向互联网世界的第一步.
-
-</p>
-            </section>
-            <div class="post-meta">
-              <time datetime="11 February 2016">11 February 2016</time>
-<!--            <span class="post-tags-set">on <span class="post-tag-">, <a href="/tag/"></a></span></span>-->
-            </div>
-          </div>
-        </article>
-      
     </div>
 
     <nav class="pagination" role="navigation">
       
-      <span class="page-number">Page 1 of 1</span>
+        <a class="newer-posts" href="/page2">&larr; Older posts</a>
+      
+      <span class="page-number">Page 1 of 2</span>
       
     </nav>
 
@@ -214,7 +241,7 @@
   <a class="subscribe" href="/feed.xml"> <span class="tooltip"> <i class="fa fa-rss"></i> Subscribe!</span></a>
 	-->
     <div class="inner">
-         <section class="copyright">All content copyright <a href="mailto:xwindphoenix@gmail.com">xwind</a> &copy; 2016 &bull; All rights reserved.</section>
+         <section class="copyright">All content copyright <a href="mailto:xwindphoenix@gmail.com">xwind</a> &copy; 2017 &bull; All rights reserved.</section>
 		 <section class="basedon">Based on <a href="https://github.com/dirkfabisch/mediator">mediator</a></section>
     </div>
 </footer>
