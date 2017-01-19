@@ -8,7 +8,7 @@ comments: true
 ---
 
 # I
-[beg:\end:step]
+[beg: end: step]
 
 beg:iteration beginning position\\
 end:iteration ending position
