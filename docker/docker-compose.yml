@@ -2,7 +2,7 @@ version: "2"
 services:
     jekyll-ci:
         build: .
-        command: bash -c "bundle exec jekyll serve -H 0.0.0.0 -P 4000"
+        command: bash -c "bundle exec jekyll serve --force_polling -H 0.0.0.0 -P 4000"
         volumes:
             - ../:/opt/tiger/XwindBlog
         working_dir: /opt/tiger/XwindBlog
