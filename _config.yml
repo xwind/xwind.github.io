@@ -18,6 +18,7 @@ name: 'xwind'
 author: 'xwind'
 author_image: "/assets/images/author.jpg"
 
+highlighter: pygments
 markdown: kramdown
 disqus: true
 disqusname: xwindphoenix.space

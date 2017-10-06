@@ -9,28 +9,28 @@ comments: true
 ---
 忙里偷闲修改一下自己的vim配置文件
 
-# 加载配色
+### 加载配色
 
 1. 从[这里](https://github.com/plasticboy/vim-markdown)git到最新的markdown配色方案
 2. 将其中所有的文件复制到你的vim目录下
 3. 重启你的vim
 
-# 更改编码
+### 更改编码
 
 打开你的vimrc，添加如下语句
 
-{% highlight vimscript %}
+{% highlight rb %}
 autocmd FileType markdown set enc=utf8
 autocmd FileType md set enc=utf8
-{% endhighlight vimscript %}
+{% endhighlight rb %}
 
-# 读取jekyll-post模版
+### 读取 jekyll-post 模版
 
-将你的jekyll-post模版保存在某个目录下，eg: 
+将你的 jekyll-post 模版保存在某个目录下，eg: 
 D:\TOOLS\Vim\template.markdown
 
-打开你的vimrc，添加如下语句
-{% highlight vimscript linenos %}
+打开你的 vimrc，添加如下语句
+{% highlight vim %}
 nmap <F4> :call CompileFunc()<CR>
 imap <F4> <Esc>:call CompileFunc()<CR>
 cmap <F4> call CompileFunc()<CR>
@@ -41,6 +41,6 @@ func CompileFunc()
 		exec "1 del"
 	endif
 endfunc
-{% endhighlight vimscript %}
+{% endhighlight vim %}
 
 更多vimscript细节，请参照[Learn Vimscript the Hard Way](http://learnvimscriptthehardway.stevelosh.com/)

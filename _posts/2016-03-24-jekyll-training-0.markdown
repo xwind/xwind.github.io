@@ -10,7 +10,7 @@ comments: true
 
 把我的经验教训，写在这里希望对大家有启发。
 
-# Ruby和Devkit安装
+### Ruby和Devkit安装
 
 从[这里](http://rubyinstaller.org/downloads/)下载Ruby和对应的Devkit
 
@@ -25,7 +25,7 @@ ruby dk.rb install
 
 _由于win10的问题，请把Devkit/bin添加到系统环境变量中_
 
-# jekyll安装以及其他配置
+### jekyll安装以及其他配置
 
 因为GFW的关系，所以我们首先应该更换gems的源
 {% highlight ruby %}

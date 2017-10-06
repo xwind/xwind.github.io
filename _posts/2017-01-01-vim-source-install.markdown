@@ -8,8 +8,10 @@ tags: vim install source
 comments: true
 ---
 
-# Git源代码
-1. 如果你没有git过vim
+### Git源代码
+
+1\. 如果你没有git过vim
+
 {% highlight bash %}
 git clone https://github.com/vim/vim.git
 {% endhighlight bash %}
@@ -18,21 +20,24 @@ git clone https://github.com/vim/vim.git
 cd vim
 git pull
 {% endhighlight bash %}
-2. 安装vim
+
+2\. 安装vim
+
 {% highlight bash %}
 cd src
 make distclean # if you build Vim before
 make
 sudo make install
 {% endhighlight bash %}
+
 但是上述方式安装并不理想，由此我参考了下其他的方法
-# 站在巨人的肩膀上
 
-1. 从[这里](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)可以了解到vim 8.0的源码安装方法
+### 站在巨人的肩膀上
 
-Chiness Translation from the link above:
+1\. 从[这里](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)可以了解到vim 8.0的源码安装方法
 
 1) 第一步是预安装相关的库和包
+
 {% highlight bash %}
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
@@ -43,6 +48,7 @@ sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
 ps:在ubuntu 16.04上,lua包的名字是liblua5.1-dev
 
 对于Fedora 20,相关指令如下:
+
 {% highlight bash %}
 sudo yum install -y ruby ruby-devel lua lua-devel luajit \
     luajit-devel ctags git python python-devel \
@@ -56,14 +62,17 @@ sudo yum install -y ruby ruby-devel lua lua-devel luajit \
 # symlink xsubpp (perl) from /usr/bin to the perl dir
 sudo ln -s /usr/bin/xsubpp /usr/share/perl5/ExtUtils/xsubpp 
 {% endhighlight bash %}
+
 此条指令是有关于Fedroa 20的XSubPP安装
 
 2) 第二步是预先卸载之前的vim
+
 {% highlight bash %}
 sudo apt-get remove vim vim-runtime gvim
 {% endhighlight bash %}
 
 或者你需要
+
 {% highlight bash %}
 sudo apt-get remove vim-tiny vim-common vim-gui-common vim-nox
 {% endhighlight bash %}
@@ -88,15 +97,18 @@ cd vim
             --enable-gui=gtk2 --enable-cscope --prefix=/usr
 make VIMRUNTIMEDIR=/usr/share/vim/vim80
 {% endhighlight bash %}
+
 如果你安装的是8.0a版本，请修改VIMRUNTIMEDIR=/usr/shar/vim/vim80a
 
 设置完毕之后，直接make就行了
+
 {% highlight bash %}
 cd ~/vim
 sudo make install
 {% endhighlight bash %}
 
 到这里vim8.0已经安装完毕了，但是或许你还需要修改你的默认编辑器
+
 {% highlight bash %}
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
 sudo update-alternatives --set editor /usr/bin/vim
