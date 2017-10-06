@@ -1,0 +1,12 @@
+---
+layout: post
+title: "Jenkins CI corporate with Gerrit in Docker"
+date: 2017-10-05
+category: docker
+tags: docker jenkins gerrit
+comments: true
+---
+# 本篇文章手把手指导大家如何从零开始，一步步通过 docker 手工搭建一个 Jenkins CI 环境
+
+## Gerrit
+我选择 Gerrit 作为我的代码仓库管理工具，因此我们先搭建一个 Gerrit 环境
