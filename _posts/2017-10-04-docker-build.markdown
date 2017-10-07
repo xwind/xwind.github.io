@@ -20,16 +20,16 @@ tips: 好久咩有更新 Blog 了，来进行工作之后的首更
 
 2\. 由于笔者用的 mac，就直接使用 docker-toolbox 全家桶了，在你的 blog 项目目录下执行一下操作
     
-{% highlight bash %}
+```shell
 mkdir docker
 cd docker
 touch docker-compose.yml
 touch Dockerfile
-{% endhighlight bash %}
+```
     
 3\. 编写 Dockerfile，Dockerfile 是 docker 运行的重要文件，虽然 docker 有大量插件，但是 Dockerfile 自身更加灵活可用
 
-{% highlight docker %}
+```
 FROM jekyll/jekyll
 
 RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.org
@@ -39,11 +39,11 @@ WORKDIR /opt/tiger/XwindBlog/
 RUN bundle update && bundle install
 
 EXPOSE 4000
-{% endhighlight docker %}
+```
 
 4\. 编写 docker-compose.yml
 
-{% highlight yaml %}
+```yaml
 version: "2"
 services:
     jekyll-ci:
@@ -54,16 +54,16 @@ services:
         working_dir: /opt/tiger/XwindBlog
         ports:
             - "4000:4000"
-{% endhighlight yaml %}
+```
 
 5\. 由于我们使用 toolbox，所以尽量使用 docker-compose 来进行容器操作
 
-{% highlight bash %}
+```shell
 docker-machine start default
 eval $(docker-machine env default) # 以上是 toolbox 初始化部分
 cd BLOGPATH/docker
 docker-compose run --rm --service-ports jekyll-ci
-{% endhighlight bash %}
+```
 
 测试环境就成功运行起来了
 

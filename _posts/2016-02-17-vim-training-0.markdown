@@ -19,10 +19,10 @@ comments: true
 
 打开你的vimrc，添加如下语句
 
-{% highlight rb %}
+```rb
 autocmd FileType markdown set enc=utf8
 autocmd FileType md set enc=utf8
-{% endhighlight rb %}
+```
 
 ### 读取 jekyll-post 模版
 
@@ -30,7 +30,7 @@ autocmd FileType md set enc=utf8
 D:\TOOLS\Vim\template.markdown
 
 打开你的 vimrc，添加如下语句
-{% highlight vim %}
+```vim
 nmap <F4> :call CompileFunc()<CR>
 imap <F4> <Esc>:call CompileFunc()<CR>
 cmap <F4> call CompileFunc()<CR>
@@ -41,6 +41,6 @@ func CompileFunc()
 		exec "1 del"
 	endif
 endfunc
-{% endhighlight vim %}
+```
 
 更多vimscript细节，请参照[Learn Vimscript the Hard Way](http://learnvimscriptthehardway.stevelosh.com/)

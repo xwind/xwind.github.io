@@ -8,22 +8,21 @@ comments: true
 ---
 
 * 修改\_include/javascripts.html
-
-{% highlight html %}
+```html
 <script type="text/javascript"
  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-{% endhighlight html %}
+```
 
 * 打开命令提示符
-{% highlight ruby %}
+```rb
 gem install kramdown
-{% endhighlight ruby %}
+```
 
 * 修改\_config.yml
-{% highlight html %}
+```yaml
 markdown: kramdown
-{% endhighlight html %}
+```
 
 * 效果测试
 $$a^2 + b^2 = c^2$$

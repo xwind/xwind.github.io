@@ -223,6 +223,7 @@ DEPENDENCIES
   bourbon
   github-pages
   jemoji
+  rouge
 
 BUNDLED WITH
    1.15.4

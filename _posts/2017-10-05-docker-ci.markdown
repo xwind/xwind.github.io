@@ -8,5 +8,28 @@ tags: docker jenkins gerrit
 comments: true
 ---
 
+### Jenkins Install
+
+容器化，直接上 docker-compose.yml
+
+```yml
+xwind-jenkins:
+  image: jenkins
+  container_name: xwind-jenkins
+  ports:
+    - 9970:8080
+  volumes:
+    - /usr/local/bin/docker:/usr/bin/docker:ro
+    - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose:ro
+    - /etc/krb5.conf:/etc/krb5.conf:ro
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /Users/xwind/var/jenkins_home:/var/jenkins_home
+  restart: always
+  environment:
+    JENKINS_OPTS: --prefix=/ci
+    JAVA_OPTS: -Djavax.net.ssl.trustStore=/var/jenkins_home/jssecacerts -Duser.timezone=Asia/Shanghai
+    PATH: /var/jenkins_home/software/node/bin:$PATH
+```
+
 ### Gerrit
 我选择 Gerrit 作为我的代码仓库管理工具，因此我们先搭建一个 Gerrit 环境
