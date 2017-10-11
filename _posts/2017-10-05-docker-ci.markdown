@@ -31,5 +31,11 @@ xwind-jenkins:
     PATH: /var/jenkins_home/software/node/bin:$PATH
 ```
 
+启动容器之后，就可以通过 dockerhost:9970/ci 访问 Jenkins 了，装完插件之后，会让你设置初始 admin
+
+这里有一个比较坑的地方，docker 映射之后的目录要在本地才能加权限，jenkins 没有权限是装不了某些插件的
+
+![](/assets/article_images/2017-10-05-docker-ci/jenkins1.png)
+
 ### Gerrit
 我选择 Gerrit 作为我的代码仓库管理工具，因此我们先搭建一个 Gerrit 环境

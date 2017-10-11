@@ -20,7 +20,7 @@ tips: 好久咩有更新 Blog 了，来进行工作之后的首更
 
 2\. 由于笔者用的 mac，就直接使用 docker-toolbox 全家桶了，在你的 blog 项目目录下执行一下操作
     
-```shell
+```bash
 mkdir docker
 cd docker
 touch docker-compose.yml
