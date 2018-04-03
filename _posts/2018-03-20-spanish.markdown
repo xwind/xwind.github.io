@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: spanish
 title:  "Puedes ser solamente una persona para el mundo, pero para una persona tú eres el mundo"
 date:   2018-03-20
 tags: spanish

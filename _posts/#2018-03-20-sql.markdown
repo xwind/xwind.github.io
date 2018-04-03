@@ -1,0 +1,40 @@
+---
+layout: post
+title:  "sql 学习笔记"
+date:   2018-03-20
+tags: mysql 8.0 euler circuit 
+image: /assets/article_images/2018-01-01-moe-girl.jpg
+---
+ 
+# COMMON TABLE EXPRESSION
+解释一下什么是 CTE
+
+# JOIN
+解释一下各类 JOIN 查询
+
+# WITH RECURSIVE
+解释一下 RECURSIVE 工作机制, 解释一下和 temp table 技术的异同
+
+# Euler Circuit Example (Mysql 8.0)
+WITH RECURSIVE all_path(u, v, length, repeated, path, strpath) AS (
+  SELECT u, v, 1, False, JSON_ARRAY( CAST( id as CHAR(63) ) ), CAST( id as CHAR(5000) )
+  FROM edges WHERE u = 1
+  UNION ALL
+  SELECT
+    all_path.v,
+    edges.v,
+    all_path.length + 1,
+    (SELECT JSON_SEARCH(all_path.path, 'one', CAST(edges.id as CHAR(63)) ) IS NOT NULL),
+    JSON_ARRAY_APPEND( all_path.path, '$', CAST(edges.id as CHAR(63)) ),
+    CONCAT(strpath, ',', edges.id)
+  FROM edges
+  JOIN all_path ON all_path.v = edges.u
+  AND NOT repeated
+ ), a_f as (
+         SELECT
+           strpath
+         FROM all_path
+         WHERE v = 1
+         AND length = (SELECT COUNT(*) FROM edges)
+ )
+SELECT strpath FROM a_f ORDER BY strpath ASC LIMIT 1;

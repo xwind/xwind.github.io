@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "network 学习笔记"
+date:   2018-03-20
+tags: mysql 8.0 euler circuit 
+image: /assets/article_images/2018-01-01-moe-girl.jpg
+---
+
+# nmap
+nmap -p 8080 localhost
+
+# telnet
+telnet xxx.xxx.xxx.xxx 8080
+
+# netstat
+netstat -an | grep 8080
