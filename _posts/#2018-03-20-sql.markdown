@@ -38,3 +38,49 @@ WITH RECURSIVE all_path(u, v, length, repeated, path, strpath) AS (
          AND length = (SELECT COUNT(*) FROM edges)
  )
 SELECT strpath FROM a_f ORDER BY strpath ASC LIMIT 1;
+
+# EXAMPLE
+SELECT post.id, post.user_id, post.content,
+count(DISTINCT malaitadb.like.id),
+count(DISTINCT malaitadb.comment.id)
+FROM post
+LEFT JOIN malaitadb.like ON (malaitadb.like.item_id = post.id)
+LEFT JOIN malaitadb.comment ON (malaitadb.comment.item_id = post.id)
+WHERE post.id in
+(143569, 142740, 138801, 137205, 136416, 133984, 133269, 132716, 128057, 124943, 123728, 122606, 121486, 121086, 120977, 120873, 120822, 120686, 120434, 120421)
+GROUP BY post.id
+
+
+SELECT TT.id, TT.comment_count, TT.like_count, (TT.like_count + TT.comment_count*4) as scoure FROM
+(SELECT T.id, T.comment_count, count(malaitadb.like.item_id) as like_count FROM
+(SELECT post.id, count(comment.id) as comment_count FROM post
+LEFT JOIN malaitadb.comment ON (post.id = malaitadb.comment.item_id)
+WHERE post.create_time > '2018-01-01 00:00:00' GROUP BY post.id ORDER BY comment_count DESC LIMIT 50) AS T
+LEFT JOIN malaitadb.like ON malaitadb.like.item_id = T.id GROUP BY id) AS TT ORDER BY scoure DESC
+
+
+SELECT TT.id, TT.comment_count, TT.like_count, (TT.like_count + TT.comment_count*4) as scoure FROM
+(SELECT T.id, T.comment_count, count(malaitadb.like.item_id) as like_count FROM
+(SELECT post.id, count(comment.id) as comment_count FROM post
+LEFT JOIN malaitadb.comment ON (post.id = malaitadb.comment.item_id
+) GROUP BY post.id) AS T
+LEFT JOIN malaitadb.like ON malaitadb.like.item_id = T.id GROUP BY id
+) AS TT WHERE TT.like_count + TT.comment_count*4 >= 100 ORDER BY scoure DESC
+
+
+SELECT post.id,
+       Coalesce(mc.comment_count, 0) AS cc,
+       Coalesce(ml.like_count, 0) AS lc,
+       Coalesce(mc.comment_count, 0)*4 + Coalesce(ml.like_count, 0) AS score
+FROM
+  post
+  LEFT JOIN  (SELECT malaitadb.comment.item_id AS id,
+          count(*) AS comment_count
+   FROM malaitadb.comment
+   GROUP BY malaitadb.comment.item_id) mc on mc.id = post.id
+  LEFT JOIN  (SELECT malaitadb.like.item_id AS id,
+          count(*) AS like_count
+   FROM malaitadb.like
+   GROUP BY malaitadb.like.item_id) ml ON ml.id = post.id
+WHERE Coalesce(mc.comment_count, 0)*4 + Coalesce(ml.like_count, 0) >= 100
+ORDER BY score DESC

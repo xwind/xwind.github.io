@@ -1,0 +1,17 @@
+---
+layout: post
+title:  "Flow Charts, WorkFlow, ER Model, UML Graph"
+date:   2018-09-23
+tags: software engineer
+---
+# Flow Charts
+[Wiki](https://en.wikipedia.org/wiki/Flowchart)
+
+# WorkFlow
+[Wiki](https://en.wikipedia.org/wiki/Workflow)
+
+# ER Diagrams
+[Wiki](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model)
+
+# UML(Unified Modeling Language)
+[Wiki](https://en.wikipedia.org/wiki/Unified_Modeling_Language)
