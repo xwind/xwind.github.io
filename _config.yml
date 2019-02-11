@@ -24,7 +24,7 @@ highlighter: rouge
 disqus: true
 disqusname: xwindphoenix.space
 paginate:	5
-url: "http://xwindphoenix.space" # the base hostname & protocol for your site
+url: "https://xwind.github.io" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
 twitter_handle: '@xwind'
