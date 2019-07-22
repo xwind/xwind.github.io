@@ -13,25 +13,23 @@ comments: true
 
 * 安装proxychains
 
-{% highlight bash %}
+```bash
 sudo apt-get install proxychains
-{% endhighlight bash %}
+```
 
 * 编辑proxychains配置
 
 poxychains路径位置
-{% highlight bash %}
+```bash
 vim /etc/proxychains.conf
-{% endhighlight bash %}
+```
 
 修改socks4条目,其中1080为你自己的端口
-{% highlight bash %}
+```bash
 socks5 127.0.0.1 1080
-{% endhighlight bash %}
+```
 
 * 使用proxychains
-
-{% highlight bash %}
+```bash
 proxychains ...
-{% endhighlight bash %}
-
+```
